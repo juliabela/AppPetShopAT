@@ -21,7 +21,7 @@ public class Brinquedo extends Produto {
     @Override
     public float calcularValorVenda() {
 
-        if (getMarca() == "Casa"){
+        if("casa".equalsIgnoreCase(this.getMarca())){
             marcaPromo = true;
         }
 
