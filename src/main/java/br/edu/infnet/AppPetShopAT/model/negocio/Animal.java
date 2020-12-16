@@ -1,5 +1,11 @@
 package br.edu.infnet.AppPetShopAT.model.negocio;
 
+import br.edu.infnet.AppPetShopAT.model.exception.NomeAnimalInvalidoException;
+import br.edu.infnet.AppPetShopAT.model.exception.NomeResponsavelInvalidoException;
+import br.edu.infnet.AppPetShopAT.model.exception.RacaInvalidaException;
+import br.edu.infnet.AppPetShopAT.model.exception.TelContatoInvalidoException;
+import org.springframework.boot.env.RandomValuePropertySource;
+
 public class Animal {
 
     private String nomeDoAnimal;
@@ -31,31 +37,17 @@ public class Animal {
         return nomeDoAnimal;
     }
 
-    public void setNomeDoAnimal(String nomeDoAnimal) {
-        this.nomeDoAnimal = nomeDoAnimal;
-    }
 
     public String getRaca() {
         return raca;
-    }
-
-    public void setRaca(String raca) {
-        this.raca = raca;
     }
 
     public String getNomeDoResponsavel() {
         return nomeDoResponsavel;
     }
 
-    public void setNomeDoResponsavel(String nomeDoResponsavel) {
-        this.nomeDoResponsavel = nomeDoResponsavel;
-    }
-
     public String getTelContato() {
         return telContato;
     }
 
-    public void setTelContato(String telContato) {
-        this.telContato = telContato;
-    }
 }

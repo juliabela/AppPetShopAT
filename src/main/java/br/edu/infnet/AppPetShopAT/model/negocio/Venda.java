@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public class Venda {
     private LocalDateTime data;
-    private Produto produto;
-    private Animal animal;
+    private int CodProduto;
+    private String proprietarioAnimal;
 
     public Venda(){
         this.data = LocalDateTime.now();
@@ -15,27 +15,30 @@ public class Venda {
     @Override
     public String toString() {
 
-
-        return String.format("%s",this.data,"%s",this.produto.toString(), "%s", this.animal.toString());
+        return String.format("%s",this.getData(),";%x",this.getCodProduto(), ";%s", this.getProprietarioAnimal());
     }
 
     public LocalDateTime getData() {
         return data;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public void setData(LocalDateTime data) {
+        this.data = data;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
+    public int getCodProduto() {
+        return CodProduto;
     }
 
-    public Animal getAnimal() {
-        return animal;
+    public void setCodProduto(int codProduto) {
+        CodProduto = codProduto;
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    public String getProprietarioAnimal() {
+        return proprietarioAnimal;
+    }
+
+    public void setProprietarioAnimal(String proprietarioAnimal) {
+        this.proprietarioAnimal = proprietarioAnimal;
     }
 }

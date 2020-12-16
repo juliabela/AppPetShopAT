@@ -10,7 +10,7 @@ public class Brinquedo extends Produto {
     private String modelo;
     private String material;
     private String marca;
-
+    private boolean marcaPromo;
 
 
     public Brinquedo(String nome, String desc,boolean producaoPropria, int qtd, float valor) {
@@ -20,7 +20,12 @@ public class Brinquedo extends Produto {
     //Definir preço especial para produção propria
     @Override
     public float calcularValorVenda() {
-        return getValor() + (this.isProducaoPropria()? 2:6);
+
+        if (getMarca() == "Casa"){
+            marcaPromo = true;
+        }
+
+        return getValor() + (this.isProducaoPropria()? 2:6) + (this.isMarcaPromo() ? -1 : 0);
     }
 
     @Override
@@ -28,6 +33,7 @@ public class Brinquedo extends Produto {
 
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
+        sb.append(";");
         sb.append(this.getModelo());
         sb.append(";");
         sb.append(this.getMaterial());
@@ -68,6 +74,14 @@ public class Brinquedo extends Produto {
             throw new MarcaInvalidaException("Marca Invalida");
         }
         this.marca = marca;
+    }
+
+    public boolean isMarcaPromo() {
+        return marcaPromo;
+    }
+
+    public void setMarcaPromo(boolean marcaPromo) {
+        this.marcaPromo = marcaPromo;
     }
 }
 
